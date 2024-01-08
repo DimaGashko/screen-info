@@ -15,9 +15,17 @@
    </style>
 </head>
 <body>
-   Screen Width: <script>document.write(window.innerWidth)</script><br>
-   Screen Height: <script>document.write(window.innerHeight)</script><br>
+   Screen Width: <script>document.write(window.screen.availWidth)</script><br>
+   Screen Height: <script>document.write(window.screen.availHeight)</script><br>
+   Aspect Ratio: <script>document.write((window.screen.availWidth/window.screen.availHeight).toFixed(2))</script><br>
+   <hr>
+   Viewport Width: <script>document.write(window.innerWidth)</script><br>
+   Viewport Height: <script>document.write(window.innerHeight)</script><br>
+   Viewport Aspect Ratio: <script>document.write((window.innerWidth/window.innerHeight).toFixed(2))</script><br>
+
+   <hr>
    Aspect Ratio: <script>document.write((window.innerWidth/window.innerHeight).toFixed(2))</script><br>
+
    DPR: <script>document.write(window.devicePixelRatio)</script>
 </body>
 </html>
