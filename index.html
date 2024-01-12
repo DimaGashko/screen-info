@@ -7,22 +7,67 @@
    <title>Scree Info</title>
    <style> 
       body {
-         font-size: 36px;
          color: #fff;
          background-color: #000;
+      }
+
+      .results {
+         position: sticky;
+         
+         font-size: 36px;
          font-weight: 600;
+         top: 0;
+
+         background-color: rgba(0,0,0,0.5);
+      }
+
+      .hint {
+         font-size: 16px;
+         color: rgba(255,255,255,0.6);
+      }
+
+      .footer {
+         padding: 16px;
+         margin-top: 200vh;
+         font-size: 14px;
+         color: rgba(255,255,255,0.6);
       }
    </style>
 </head>
 <body>
-   Screen Width: <script>document.write(window.screen.availWidth)</script><br>
-   Screen Height: <script>document.write(window.screen.availHeight)</script><br>
-   Aspect Ratio: <script>document.write((window.screen.availWidth/window.screen.availHeight).toFixed(2))</script><br>
-   <hr>
-   Viewport Width: <script>document.write(window.innerWidth)</script><br>
-   Viewport Height: <script>document.write(window.innerHeight)</script><br>
-   Viewport Aspect Ratio: <script>document.write((window.innerWidth/window.innerHeight).toFixed(2))</script><br>
-   <hr>
-   DPR: <script>document.write(window.devicePixelRatio)</script>
+   <div class="results">
+      Screen Width: <script>document.write(window.screen.availWidth)</script><br>
+      Screen Height: <script>document.write(window.screen.availHeight)</script><br>
+      Aspect Ratio: <script>document.write((window.screen.availWidth/window.screen.availHeight).toFixed(2))</script><br>
+      <hr>
+      Viewport Width: <script>document.write(window.innerWidth)</script><br>
+      Viewport Height: <script>document.write(window.innerHeight)</script><br>
+      Viewport Aspect Ratio: <script>document.write((window.innerWidth/window.innerHeight).toFixed(2))</script><br>
+      <hr>
+      DPR: <script>document.write(window.devicePixelRatio)</script>
+
+      <hr style="margin-top: 2em">
+      Dynamic viewport values:
+      <div class="additional-results-js">
+         <span class="hint">Start scrolling</span>
+      </div>
+   </div>
+
+   <footer class="footer">Screen info, <script>document.write(new Date().getFullYear())</script></footer>
+
+   <script>
+      const $results = document.body.querySelector('.additional-results-js');
+
+      window.addEventListener('scroll', update);
+      window.addEventListener('orientationchange', update);
+
+      function update() {
+         $results.innerHTML = `
+            Viewport Width: ${window.innerWidth}<br>
+            Viewport Height: ${window.innerHeight}<br>
+            Viewport Aspect Ratio: ${(window.innerWidth/window.innerHeight).toFixed(2)}<br>
+         `;
+      }
+   </script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+{
+  "name": "screen-info",
+  "version": "1.0.0",
+  "description": "https://pagespeed.web.dev/analysis/https-dimagashko-github-io-screen-info/pycsot8zuq?form_factor=mobile",
+  "main": "index.js",
+  "scripts": {
+    "serve": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimaGashko/screen-info.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DimaGashko/screen-info/issues"
+  },
+  "homepage": "https://github.com/DimaGashko/screen-info#readme",
+  "dependencies": {
+    "browser-sync": "^3.0.2"
+  }
+}
